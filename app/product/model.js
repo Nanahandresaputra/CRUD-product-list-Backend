@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
   name: {
@@ -20,11 +20,8 @@ const productSchema = new mongoose.Schema({
     type: Boolean,
     default: true,
   },
-  image_url: {
-    type: String,
-  },
 });
-// jika menggunakan collection atau data yang sudah ada maka gunakan seperi yg dibawah jika membuat baru pakai yang di folder backend yg bukan tugas
-const Product = mongoose.model("Product", productSchema, "product");
 
-export default Product;
+const Product = mongoose.model("Product", productSchema);
+
+module.exports = Product;
