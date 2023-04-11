@@ -3,7 +3,9 @@ const logger = require("morgan");
 const cors = require("cors");
 const productRouter = require("./app/product/routes.js");
 const db = require("./database/mongoose.js");
+const config = require("./config/config.js");
 
+const port = config.port;
 const app = express();
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
@@ -21,4 +23,4 @@ app.use((req, res) => {
     message: `resource ${req.originalUrl} not found`,
   });
 });
-app.listen(8000, console.log("server running in http://localhost:8000"));
+app.listen(8000, console.log(`server running in port ${port}`));
