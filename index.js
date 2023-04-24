@@ -23,4 +23,4 @@ app.use((req, res) => {
     message: `resource ${req.originalUrl} not found`,
   });
 });
-app.listen(8000, console.log(`server running in port ${port}`));
+app.listen(port, console.log(`server running in port ${port}`));
